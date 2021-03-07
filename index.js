@@ -17,8 +17,7 @@ const   clientsRoutes   = require("./routes/clients"),
 dotenv.config(); // Configure environment variables
 
 // Set up default mongoose connection
-//const host = process.env.HOST || `mongodb://localhost:${process.env.PORTDB}/integra-media`;
-const host = 'mongodb+srv://darkfyre:Uchiha5284!@cluster0.pt16z.mongodb.net/integra-media?retryWrites=true&w=majority';
+const host = process.env.HOST || `mongodb://localhost:${process.env.PORTDB}/integra-media`;
 mongoose.connect(host,{ useNewUrlParser: true ,useUnifiedTopology: true}, function(err){
     if (err){
         console.log("Conection error to database")
