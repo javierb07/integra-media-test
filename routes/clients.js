@@ -6,7 +6,6 @@ const   express = require("express"),
 
 // Create a client
 router.post('/', (req, res) => {
-    // Create a client
     const client = req.body;
     const date = client.dob.split('-');
     const dobDate = new Date(date[0], date[1] - 1, date[2]); 
@@ -18,7 +17,7 @@ router.post('/', (req, res) => {
         age: client.age,
         creditCard: client.creditCard,
     }; 
-    // Create a new client and save to DB
+    // Create a new client and save it to DB
     Client.create(newClient, (err, newlyCreated) => {
         if(err){
             console.log(err);
@@ -56,11 +55,13 @@ router.get('/:client_id', (req, res) => {
 // Update a client
 router.put('/:client_id', (req, res) => {
     const client = req.body;
+    const date = client.dob.split('-');
+    const dobDate = new Date(date[0], date[1] - 1, date[2]); 
     const updateClient = {
         firstName: client.firstName,
         lastName: client.lastName,
         dni: client.dni,
-        dob: client.dob,
+        dob: dobDate,
         age: client.age,
         creditCard: client.creditCard,
     }; 

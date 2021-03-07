@@ -1,11 +1,11 @@
 'Use Strict' // Code should be executed in "strict mode" to make it easier to write better JavaScript
 
 // Import required libraries
-const   express        = require("express"),
+const   express        = require('express'),
         path           = require('path'),
-        mongoose       = require("mongoose"),
-        bodyParser     = require("body-parser"),
-        methodOverride = require("method-override"),
+        mongoose       = require('mongoose'),
+        bodyParser     = require('body-parser'),
+        methodOverride = require('method-override'),
         dotenv         = require('dotenv');
 
 // Required API routes
