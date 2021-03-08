@@ -16,6 +16,11 @@ const useStyles = makeStyles({
 
 const ClientsList = ({ clients, deleteHandler }) => {
     const classes = useStyles();
+    
+    const splitDate = (date) => {
+        return date.split('T')[0];
+    }
+
     return(
         <>
             <h2>List of Clients</h2>
@@ -39,7 +44,7 @@ const ClientsList = ({ clients, deleteHandler }) => {
                         </TableCell>
                         <TableCell align="left">{client.lastName}</TableCell>
                         <TableCell align="left">{client.dni}</TableCell>
-                        <TableCell align="left">{client.dob}</TableCell>
+                        <TableCell align="left">{splitDate(client.dob)}</TableCell>
                         <TableCell align="left">{client.age}</TableCell>
                         <TableCell align="left">{client.creditCard}</TableCell>
                         </TableRow>

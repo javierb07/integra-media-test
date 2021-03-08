@@ -14,8 +14,12 @@ const useStyles = makeStyles({
   },
 });
 
-const EmployeesList = ({ employees, deleteHandler }) => {
+const EmployeesList = ({ employees }) => {
     const classes = useStyles();
+
+    const splitDate = (date) => {
+        return date.split('T')[0];
+    }
 
     return(
         <>
@@ -40,7 +44,7 @@ const EmployeesList = ({ employees, deleteHandler }) => {
                         </TableCell>
                         <TableCell align="left">{employee.lastName}</TableCell>
                         <TableCell align="left">{employee.dni}</TableCell>
-                        <TableCell align="left">{employee.dob}</TableCell>
+                        <TableCell align="left">{splitDate(employee.dob)}</TableCell>
                         <TableCell align="left">{employee.age}</TableCell>
                         <TableCell align="left">{employee.employeeID}</TableCell>
                         </TableRow>

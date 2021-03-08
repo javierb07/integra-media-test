@@ -108,6 +108,7 @@ export default function AddEmployee(props) {
                 label="DNI"
                 id="standard-number"
                 name="dni"
+                InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.dni}
                 type="number"
                 className={classes.textField}
@@ -117,6 +118,7 @@ export default function AddEmployee(props) {
                 label="Age"
                 id="standard-number"
                 name="age"
+                InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.age}
                 type="number"
                 className={classes.textField}
@@ -126,6 +128,7 @@ export default function AddEmployee(props) {
                 label="Employee ID"
                 id="standard-number"
                 name="employeeID"
+                InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.employeeID}
                 type="number"
                 className={classes.textField}

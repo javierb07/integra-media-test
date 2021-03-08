@@ -16,8 +16,14 @@ const useStyles = makeStyles({
 
 const InvoicesList = ({ invoices }) => {
     const classes = useStyles();
+    
+    const splitDate = (date) => {
+        return date.split('T')[0];
+    }
+
     return(
         <>
+            {console.log(invoices)}
             <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
@@ -36,25 +42,26 @@ const InvoicesList = ({ invoices }) => {
                             <TableCell align="left">
                                 <li>Full name: {invoice.client.firstName} {invoice.client.lastName}</li>
                                 <li>DNI: {invoice.client.dni}</li>
-                                <li>DoB: {invoice.client.dob}</li>
+                                <li>DoB: {splitDate(invoice.client.dob)}</li>
                                 <li>Age: {invoice.client.age}</li>
                                 <li>Credit Card: {invoice.client.creditCard}</li>
                             </TableCell>
                             <TableCell align="left">
                                 <li>Full name: {invoice.employee.firstName} {invoice.employee.lastName}</li>
                                 <li>DNI: {invoice.employee.dni}</li>
-                                <li>DoB: {invoice.employee.dob}</li>
+                                <li>DoB: {splitDate(invoice.employee.dob)}</li>
                                 <li>Age: {invoice.employee.age}</li>
                                 <li>Employee ID: {invoice.employee.employeeID}</li>
                             </TableCell>
                             <TableCell align="left">
                                 {invoice.products.map((product) => (
+                                    
                                     <li key={product.product._id}>
                                         {product.product.name} ({product.quantity})
                                     </li>
                                 ))}
                             </TableCell>
-                            <TableCell align="left">{invoice.dateOfPurchase}</TableCell>
+                            <TableCell align="left">{splitDate(invoice.dateOfPurchase)}</TableCell>
                             <TableCell align="left">{invoice.totalPrice.toFixed(2)}</TableCell>
                             <TableCell align="left">
                                <a href={`/api/invoices/${invoice._id}/pdf`}>Print Invoice</a> 

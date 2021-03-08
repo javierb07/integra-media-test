@@ -56,14 +56,28 @@ nav a:hover {
   padding-top: 64px;
 }
 
-.select-css{
+.invoice-button{
+  margin: 10px;
+  text-align: right;
+}
+
+.li-invoice{
+  border-left: 5px solid #3f51b5;
+  background-color: #f1f1f1;
+  list-style-type: none;
+  padding: 10px 20px;
   margin-bottom: 10px;
 }
 
-.invoice-button{
-  margin: 10px;
+nav{
+  z-index:99;
 }
 
-.button-delete{
-  padding: 5px;
+.invoice-header{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+select{
+  background-color: #f1f1f1;
 }

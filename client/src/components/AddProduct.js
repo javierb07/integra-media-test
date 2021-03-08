@@ -118,6 +118,7 @@ export default function AddProduct(props) {
             <TextField
                 label="Price"
                 id="standard-number"
+                InputProps={{ inputProps: { min: 0 } }}
                 name="price"
                 defaultValue={formInput.price}
                 type="number"

@@ -32,7 +32,7 @@ export default class Products extends React.Component {
       return (
         <>
             <h1>Products</h1>
-            <AddProduct addHandler={this.addClient} />
+            <AddProduct addHandler={this.addProduct} />
             <ProductsList products={this.state.productsContent} />
          </>
       )

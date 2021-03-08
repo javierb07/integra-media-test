@@ -37,15 +37,16 @@ router.post('/', async (req, res) => {
     let products = await Product.find().where('_id').in(products_ids).exec();
     products_ids = products.map(product => product._id);
     let totalPrice = 0;
-    let productsObj = {};
     let productsArr = [];
     for (let i=0; i < products.length; i++) {
         totalPrice += product_qties[i] * products[i].price;
-        productsObj.product = products[i]._id;
-        productsObj.quantity = product_qties[i];
-        productsArr.push(productsObj);
+        if(product_qties[i] != 0){
+            let productsObj = {};
+            productsObj.product = products[i]._id;
+            productsObj.quantity = product_qties[i];
+            productsArr.push(productsObj);
+        }
     }
-    console.log(productsArr);
     const newInvoice = new Invoice({
         client: client._id,
         employee: employee._id,

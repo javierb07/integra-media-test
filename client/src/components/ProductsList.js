@@ -16,6 +16,9 @@ const useStyles = makeStyles({
 
 const ProductsList = ({ products }) => {
     const classes = useStyles();
+    const splitDate = (date) => {
+        return date.split('T')[0];
+    }
     return(
         <>
             <h2>List of Products</h2>
@@ -37,7 +40,7 @@ const ProductsList = ({ products }) => {
                             {product.name}
                         </TableCell>
                         <TableCell align="left">{product.brand}</TableCell>
-                        <TableCell align="left">{product.expirationDate}</TableCell>
+                        <TableCell align="left">{splitDate(product.expirationDate)}</TableCell>
                         <TableCell align="left">{product.price}</TableCell>
                         <TableCell align="left">{product.supplier}</TableCell>
                         </TableRow>

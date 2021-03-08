@@ -12,6 +12,8 @@ import Employees from './pages/Employees';
 import NotFoundPage from './pages/NotFoundPage';
 import NavBar from './components/NavBar';
 import './App.css';
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {

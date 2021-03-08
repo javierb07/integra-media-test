@@ -111,6 +111,7 @@ export default function AddClient(props) {
                 label="DNI"
                 id="standard-number"
                 name="dni"
+                InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.dni}
                 type="number"
                 className={classes.textField}
@@ -120,6 +121,7 @@ export default function AddClient(props) {
                 label="Age"
                 id="standard-number"
                 name="age"
+                InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.age}
                 type="number"
                 className={classes.textField}
@@ -129,6 +131,7 @@ export default function AddClient(props) {
                 label="Credit Card Number"
                 id="standard-number"
                 name="creditCard"
+                InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.creditCard}
                 type="number"
                 className={classes.textField}
