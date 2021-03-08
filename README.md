@@ -64,4 +64,4 @@ A non relational database implemented in MongoDB with Mongoose as ODM is used to
 
 For the frontend, an application written in React is used, with components extracted from libraries such as Bootstrap and Material UI.
 
-Finally, the implementation of the program is deployed Heroku and can be seen at: https://integra-media-test.herokuapp.com/
+Finally, for the implementation of the program, Heroku is used as deployement platform: https://integra-media-test.herokuapp.com/
