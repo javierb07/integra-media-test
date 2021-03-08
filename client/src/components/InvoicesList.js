@@ -64,7 +64,7 @@ const InvoicesList = ({ invoices }) => {
                             <TableCell align="left">{splitDate(invoice.dateOfPurchase)}</TableCell>
                             <TableCell align="left">{invoice.totalPrice.toFixed(2)}</TableCell>
                             <TableCell align="left">
-                               <a href={`/api/invoices/${invoice._id}/pdf`}>Print Invoice</a> 
+                               <a href={`/api/invoices/${invoice._id}/pdf`} target="_blank">Print Invoice</a> 
                             </TableCell>
                         </TableRow>
                     ))}
