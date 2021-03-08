@@ -14,8 +14,9 @@ const useStyles = makeStyles({
   },
 });
 
-const EmployeesList = ({ employees }) => {
+const EmployeesList = ({ employees, deleteHandler }) => {
     const classes = useStyles();
+
     return(
         <>
             <h2>List of Employees</h2>
@@ -23,12 +24,12 @@ const EmployeesList = ({ employees }) => {
             <Table className={classes.table} aria-label="simple table">
             <TableHead>
                 <TableRow>
-                    <TableCell align="right">First Name </TableCell>
-                    <TableCell align="right">Last Name</TableCell>
-                    <TableCell align="right">DNI</TableCell>
-                    <TableCell align="right">Date of Birth</TableCell>
-                    <TableCell align="right">Age</TableCell>
-                    <TableCell align="right">Employee ID</TableCell>
+                    <TableCell align="left">First Name </TableCell>
+                    <TableCell align="left">Last Name</TableCell>
+                    <TableCell align="left">DNI</TableCell>
+                    <TableCell align="left">Date of Birth</TableCell>
+                    <TableCell align="left">Age</TableCell>
+                    <TableCell align="left">Employee ID</TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
@@ -37,11 +38,11 @@ const EmployeesList = ({ employees }) => {
                         <TableCell component="th" scope="row">
                             {employee.firstName}
                         </TableCell>
-                        <TableCell align="right">{employee.lastName}</TableCell>
-                        <TableCell align="right">{employee.dni}</TableCell>
-                        <TableCell align="right">{employee.dob}</TableCell>
-                        <TableCell align="right">{employee.age}</TableCell>
-                        <TableCell align="right">{employee.employeeID}</TableCell>
+                        <TableCell align="left">{employee.lastName}</TableCell>
+                        <TableCell align="left">{employee.dni}</TableCell>
+                        <TableCell align="left">{employee.dob}</TableCell>
+                        <TableCell align="left">{employee.age}</TableCell>
+                        <TableCell align="left">{employee.employeeID}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

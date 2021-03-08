@@ -24,10 +24,10 @@ const ProductsList = ({ products }) => {
             <TableHead>
                 <TableRow>
                     <TableCell>Name </TableCell>
-                    <TableCell align="right">Brand</TableCell>
-                    <TableCell align="right">Expiration date</TableCell>
-                    <TableCell align="right">Price</TableCell>
-                    <TableCell align="right">Supplier</TableCell>
+                    <TableCell align="left">Brand</TableCell>
+                    <TableCell align="left">Expiration date</TableCell>
+                    <TableCell align="left">Price</TableCell>
+                    <TableCell align="left">Supplier</TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
@@ -36,10 +36,10 @@ const ProductsList = ({ products }) => {
                         <TableCell component="th" scope="row">
                             {product.name}
                         </TableCell>
-                        <TableCell align="right">{product.brand}</TableCell>
-                        <TableCell align="right">{product.expirationDate}</TableCell>
-                        <TableCell align="right">{product.price}</TableCell>
-                        <TableCell align="right">{product.supplier}</TableCell>
+                        <TableCell align="left">{product.brand}</TableCell>
+                        <TableCell align="left">{product.expirationDate}</TableCell>
+                        <TableCell align="left">{product.price}</TableCell>
+                        <TableCell align="left">{product.supplier}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

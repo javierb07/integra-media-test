@@ -26,6 +26,7 @@ export default function AddEmployee(props) {
     textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
+      marginBottom: theme.spacing(2),
       width: 400
     }
   }));
@@ -44,7 +45,6 @@ export default function AddEmployee(props) {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-
     let data = { formInput };
     fetch("/api/employees/", {
       method: "POST",
@@ -55,6 +55,7 @@ export default function AddEmployee(props) {
     })
       .then(response => response.json())
       .then(response => console.log("Success:", JSON.stringify(response)))
+      .then(props.addHandler())
       .catch(error => console.error("Error:", error));
   };
 
@@ -81,7 +82,6 @@ export default function AddEmployee(props) {
                 name="firstName"
                 defaultValue={formInput.firstName}
                 className={classes.textField}
-                helperText="Enter first name"
                 onChange={handleInput}
             />
             <TextField
@@ -90,7 +90,6 @@ export default function AddEmployee(props) {
                 name="lastName"
                 defaultValue={formInput.lastName}
                 className={classes.textField}
-                helperText="Enter last name"
                 onChange={handleInput}
             />
             <TextField

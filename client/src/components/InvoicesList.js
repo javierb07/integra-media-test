@@ -20,15 +20,15 @@ const InvoicesList = ({ invoices }) => {
         <>
             <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
-            <TableHead>
-                <TableRow>
-                    <TableCell align="center">Client </TableCell>
-                    <TableCell align="center">Employee</TableCell>
-                    <TableCell align="center">Products</TableCell>
-                    <TableCell align="center">Date of Pruchase</TableCell>
-                    <TableCell align="center">Total Price</TableCell>
-                    <TableCell align="center">Print Invoice</TableCell>
-                </TableRow>
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="left">Client </TableCell>
+                        <TableCell align="left">Employee</TableCell>
+                        <TableCell align="left">Products</TableCell>
+                        <TableCell align="left">Date of Pruchase</TableCell>
+                        <TableCell align="left">Total Price</TableCell>
+                        <TableCell align="left">Print Invoice</TableCell>
+                    </TableRow>
                 </TableHead>
                 <TableBody>
                     {invoices.map((invoice) => (
@@ -54,9 +54,9 @@ const InvoicesList = ({ invoices }) => {
                                     </li>
                                 ))}
                             </TableCell>
-                            <TableCell align="center">{invoice.dateOfPurchase}</TableCell>
-                            <TableCell align="center">{invoice.totalPrice.toFixed(2)}</TableCell>
-                            <TableCell align="center">
+                            <TableCell align="left">{invoice.dateOfPurchase}</TableCell>
+                            <TableCell align="left">{invoice.totalPrice.toFixed(2)}</TableCell>
+                            <TableCell align="left">
                                <a href={`/api/invoices/${invoice._id}/pdf`}>Print Invoice</a> 
                             </TableCell>
                         </TableRow>

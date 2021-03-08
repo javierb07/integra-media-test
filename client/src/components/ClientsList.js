@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ClientsList = ({ clients }) => {
+const ClientsList = ({ clients, deleteHandler }) => {
     const classes = useStyles();
     return(
         <>
@@ -23,12 +23,12 @@ const ClientsList = ({ clients }) => {
             <Table className={classes.table} aria-label="simple table">
             <TableHead>
                 <TableRow>
-                    <TableCell align="right">First Name </TableCell>
-                    <TableCell align="right">Last Name</TableCell>
-                    <TableCell align="right">DNI</TableCell>
-                    <TableCell align="right">Date of Birth</TableCell>
-                    <TableCell align="right">Age</TableCell>
-                    <TableCell align="right">Credit Card Number</TableCell>
+                    <TableCell align="left">First Name </TableCell>
+                    <TableCell align="left">Last Name</TableCell>
+                    <TableCell align="left">DNI</TableCell>
+                    <TableCell align="left">Date of Birth</TableCell>
+                    <TableCell align="left">Age</TableCell>
+                    <TableCell align="left">Credit Card Number</TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
@@ -37,11 +37,11 @@ const ClientsList = ({ clients }) => {
                         <TableCell component="th" scope="row">
                             {client.firstName}
                         </TableCell>
-                        <TableCell align="right">{client.lastName}</TableCell>
-                        <TableCell align="right">{client.dni}</TableCell>
-                        <TableCell align="right">{client.dob}</TableCell>
-                        <TableCell align="right">{client.age}</TableCell>
-                        <TableCell align="right">{client.creditCard}</TableCell>
+                        <TableCell align="left">{client.lastName}</TableCell>
+                        <TableCell align="left">{client.dni}</TableCell>
+                        <TableCell align="left">{client.dob}</TableCell>
+                        <TableCell align="left">{client.age}</TableCell>
+                        <TableCell align="left">{client.creditCard}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

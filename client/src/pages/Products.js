@@ -9,6 +9,7 @@ export default class Products extends React.Component {
         this.state = {
             productsContent: []
         };
+        this.addProduct = this.addProduct.bind(this);
       }
   
     componentDidMount() {
@@ -19,11 +20,19 @@ export default class Products extends React.Component {
         })
     }
   
+    addProduct () {
+      axios.get(`/api/products/`)
+      .then(res => {
+        const productsContent = res.data;
+        this.setState({ productsContent });
+      });
+    }
+
     render() {
       return (
         <>
             <h1>Products</h1>
-            <AddProduct  />
+            <AddProduct addHandler={this.addClient} />
             <ProductsList products={this.state.productsContent} />
          </>
       )

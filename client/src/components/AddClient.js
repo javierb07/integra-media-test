@@ -26,6 +26,7 @@ export default function AddClient(props) {
     textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
+      marginBottom: theme.spacing(2),
       width: 400
     }
   }));
@@ -55,6 +56,7 @@ export default function AddClient(props) {
     })
       .then(response => response.json())
       .then(response => console.log("Success:", JSON.stringify(response)))
+      .then(props.addHandler())
       .catch(error => console.error("Error:", error));
   };
 
