@@ -33,7 +33,7 @@
 * Unit price
 * Supplier
 
-### Invoice (sell) data
+### Invoice (sale) data
 
 * Client's first and last name
 * Employee's first and last name, and ID
