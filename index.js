@@ -4,7 +4,6 @@
 const   express        = require('express'),
         path           = require('path'),
         mongoose       = require('mongoose'),
-        bodyParser     = require('body-parser'),
         methodOverride = require('method-override'),
         dotenv         = require('dotenv');
 
@@ -32,8 +31,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // App configuration
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}))
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '/build')));
 app.use(methodOverride('_method'));
 
