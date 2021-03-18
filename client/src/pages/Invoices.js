@@ -14,7 +14,6 @@ export default class Invoices extends React.Component {
       axios.get(`/api/invoices/`)
         .then(res => {
           const invoicesContent = res.data;
-          console.log(invoicesContent);
           this.setState({ invoicesContent });
         })
     }
