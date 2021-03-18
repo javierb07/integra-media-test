@@ -38,7 +38,6 @@ export default function AddClient(props) {
       lastName: '',
       dni: 0,
       dob: '',
-      age: 0,
       creditCard: 0,
     }
   );
@@ -113,16 +112,6 @@ export default function AddClient(props) {
                 name="dni"
                 InputProps={{ inputProps: { min: 0 } }}
                 defaultValue={formInput.dni}
-                type="number"
-                className={classes.textField}
-                onChange={handleInput}
-            />
-            <TextField
-                label="Age"
-                id="standard-number"
-                name="age"
-                InputProps={{ inputProps: { min: 0 } }}
-                defaultValue={formInput.age}
                 type="number"
                 className={classes.textField}
                 onChange={handleInput}

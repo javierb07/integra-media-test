@@ -8,13 +8,14 @@ const   express  = require("express"),
 router.post('/', (req, res) => {
     const employee = req.body;
     const date = employee.dob.split('-');
+    const age = getAge(employee.dob);
     const dobDate = new Date(date[0], date[1] - 1, date[2]); 
     const newEmployee = {
         firstName: employee.firstName,
         lastName: employee.lastName,
         dni: employee.dni,
         dob: dobDate,
-        age: employee.age,
+        age: age,
         employeeID: employee.employeeID,
     }; 
     // Create a new employee and save it to DB
@@ -87,5 +88,17 @@ router.delete('/:employee_id', (req, res) => {
         }
      });
 });
+
+// Helper calculate age function
+function getAge(dateString) {
+    const today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
 
 module.exports = router;

@@ -135,7 +135,7 @@ export default class Sell extends React.Component {
             <Jumbotron>
               <form onSubmit={this.handleSubmit}>
                 <div className={'select-css row mb-2'}>
-                  <label className={'col-6'}>
+                  <label className={'col-lg-6 col-12'}>
                       <span className={'mr-2'}>
                         Select a client:
                         </span>
@@ -145,7 +145,7 @@ export default class Sell extends React.Component {
                             ))}
                         </select>
                   </label>
-                  <label className={'col-6'}>
+                  <label className={'col-lg-6 col-12'}>
                     <span className={'mr-2'}>
                       Select an employee:     
                     </span>
@@ -162,9 +162,9 @@ export default class Sell extends React.Component {
                         <div className={'col-3'}>Price</div>
                         <div className={'col-3'}>Quantity</div>
                 </div>
-                {this.state.productsContent.map((product) => (
+                {this.state.productsContent.map((product, i) => (
                   <>
-                      <li key={product._id} className={'row li-invoice'}>
+                      <li key={product._id + i} className={'row li-invoice'}>
                         <div className={'col-3'}>{product.name}</div>
                         <div className={'col-3'}>{product.brand}</div>
                         <div className={'col-3'}>{product.price}</div>

@@ -8,13 +8,14 @@ const   express = require("express"),
 router.post('/', (req, res) => {
     const client = req.body;
     const date = client.dob.split('-');
+    const age = getAge(client.dob);
     const dobDate = new Date(date[0], date[1] - 1, date[2]); 
     const newClient = {
         firstName: client.firstName,
         lastName: client.lastName,
         dni: client.dni,
         dob: dobDate,
-        age: client.age,
+        age: age,
         creditCard: client.creditCard,
     }; 
     // Create a new client and save it to DB
@@ -87,5 +88,17 @@ router.delete('/:client_id', (req, res) => {
         }
      });
 });
+
+// Helper calculate age function
+function getAge(dateString) {
+    const today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
 
 module.exports = router;
