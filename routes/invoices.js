@@ -226,7 +226,7 @@ Employee ID: ${invoice.employee.employeeID} \n
             );
             doc
             .fontSize(20)
-            .text('Products selled:')
+            .text('Products sold:')
             .fontSize(10)
             for (let product of invoice.products){
                 doc.text(`Name: ${product.product.name}     Price: ${product.product.price}     Quantity: ${product.quantity}   Total: ${product.product.price * product.quantity} `);
